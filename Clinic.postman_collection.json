@@ -1,0 +1,1204 @@
+{
+	"info": {
+		"_postman_id": "d9d236d7-63d4-46a3-8cd0-8a18bafc06db",
+		"name": "Clinic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get clinic data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/users/get_clinic_data/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"get_clinic_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all booking requested by me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/get_all_booking_requisted/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"get_all_booking_requisted",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userName",
+									"value": "moataz mohamed09",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "moataz09@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "01289555089*",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/users/add_account/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"add_account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "moataz09@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "01289555089*",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/users/login/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add booking sick as user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sddsfsdfdssdfsfsd",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "01289555089",
+									"type": "text"
+								},
+								{
+									"key": "pk",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "type_of_statement",
+									"value": "A",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nurse/add_booking/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nurse",
+								"add_booking",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "nurse",
+			"item": [
+				{
+					"name": "add visitor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "ahmed",
+									"type": "text"
+								},
+								{
+									"key": "reason_of_visitor",
+									"value": "sdcsidcnsicnsdcsdyubcisbibsub",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nurse/add_visitor/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nurse",
+								"add_visitor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get visitor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/nurse/add_visitor/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nurse",
+								"add_visitor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get booking sick",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/nurse/add_booking/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nurse",
+								"add_booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add booking sick as nurse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sddsfsdfdssdfsfsd",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "01289555089",
+									"type": "text"
+								},
+								{
+									"key": "pk",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "type_of_statement",
+									"value": "A",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nurse/add_booking/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nurse",
+								"add_booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve booking",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "row_pk",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "user_pk",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nurse/approve_booking/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nurse",
+								"approve_booking",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "doctor",
+			"item": [
+				{
+					"name": "add nurse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userName",
+									"value": "asdscasc ",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "asdscasc@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1593578264*",
+									"type": "text"
+								},
+								{
+									"key": "first_phone_number",
+									"value": "0152658962",
+									"type": "text"
+								},
+								{
+									"key": "second_phone_number",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "ssdadasdasasda",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/add_nurse/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"add_nurse",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve visitor",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/approve_visitor/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"approve_visitor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add fees",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "dsaaaaaaaac",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20.502",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "2022-09-12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/add_fees/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"add_fees",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific fee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/fees_update_delete_get/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"fees_update_delete_get",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update get",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "qwedsa",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "32.28",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "2022-09-11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/fees_update_delete_get/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"fees_update_delete_get",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete fees",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/fees_update_delete_get/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"fees_update_delete_get",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fees of day",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "date",
+									"value": "2022-09-12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/get_fees_of_day/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"get_fees_of_day",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get fees of month",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "date",
+									"value": "2022-09-12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/get_fees_of_month/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"get_fees_of_month",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add report for sick",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "doctor_report",
+									"value": "sdfgsdfgd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/add_report_for_sick/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"add_report_for_sick",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit data clinic",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "qqqqqqqqqqq",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "wwwwwwwwwww",
+									"type": "text"
+								},
+								{
+									"key": "from_time",
+									"value": "16:00:00",
+									"type": "text"
+								},
+								{
+									"key": "to_time",
+									"value": "20:00:00",
+									"type": "text"
+								},
+								{
+									"key": "time_of_vacation",
+									"value": "eeeeeeeeeeeee",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/edit_data_clinic/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"edit_data_clinic",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add data of clinic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "address",
+									"value": "zzzzzzz",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "xxxxxxx",
+									"type": "text"
+								},
+								{
+									"key": "from_time",
+									"value": "16:00:00",
+									"type": "text"
+								},
+								{
+									"key": "to_time",
+									"value": "20:00:00",
+									"type": "text"
+								},
+								{
+									"key": "time_of_vacation",
+									"value": "cccccccc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/model_of_clinic/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"model_of_clinic",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add doctor data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "aaaaaaaccaaa",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "01289555089",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mke@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "01289555089*",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "mko,lpnji",
+									"type": "text"
+								},
+								{
+									"key": "pic",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/model_of_doctor/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"model_of_doctor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit doctor data Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "fgb",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "01289555089",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mke@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "01289555089*",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "mko,lpnji",
+									"type": "text"
+								},
+								{
+									"key": "pic",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "pk",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/edit_data_doctor/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"edit_data_doctor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all data of doctor",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/model_of_doctor/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"model_of_doctor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all data of clinic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/model_of_clinic/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"model_of_clinic",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get data of specific clinic",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/clinic_get_delete/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"clinic_get_delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete data of specific clinic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/clinic_get_delete/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"clinic_get_delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get data of specific doctor",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/doctor_get_delete/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"doctor_get_delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete data of specific doctor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pk",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/doctor/doctor_get_delete/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"doctor_get_delete",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
