@@ -5,7 +5,7 @@ import datetime
 
 def update_pic_filename(instance, original_file_name):
     extension = original_file_name.split('.')[-1]
-    new_name = str(instance.kaid_num)
+    new_name = str(instance.id)
 
     # Search in the Directory for the same number and print error message if found
     filename = 'doctor_pic/{0}.{1}'.format(new_name, extension)

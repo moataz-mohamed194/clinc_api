@@ -296,7 +296,7 @@
 					"response": []
 				},
 				{
-					"name": "add booking sick as nurse",
+					"name": "add booking sick",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -973,7 +973,7 @@
 								{
 									"key": "pic",
 									"type": "file",
-									"src": []
+									"src": "/home/moataz/Documents/private/Screenshot from 2021-05-15 13-59-46.png"
 								},
 								{
 									"key": "pk",
