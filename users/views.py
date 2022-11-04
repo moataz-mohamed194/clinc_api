@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from rest_framework import generics
 
 from doctor.models import *
-from nurse.models import Row
+from nurse.models import Row, Nurse
 from users.models import User
 from django.contrib.auth.models import User as MainUser
 
@@ -64,14 +64,45 @@ class Login(generics.CreateAPIView):
         data_sign = self.request.data
         print(data_sign)
         username = MainUser.objects.get(email=data_sign['email']).username
+        pk = MainUser.objects.get(email=data_sign['email']).id
         user = authenticate(request,
                             username=username,
                             password=data_sign['password'])
-
+        email = data_sign['email']
         if user is not None:
             login(request, user)
             if user.is_active:
-                data = {'Results': "Success request"}
+
+                try:
+                    nurse = Nurse.objects.get(email=user.email)
+                    data = {
+                            'Results': "Success request",
+                            'pk': user.pk,
+                            'name': nurse.name,
+                            'typeOfAccount': 'Nurse'
+                    }
+                except:
+
+                    try:
+                        userAccount = User.objects.get(email=user.email)
+                        data = {
+                            'Results': "Success request",
+                            'pk': user.pk,
+                            'name': userAccount.username,
+                            'typeOfAccount': 'User'
+                        }
+                    except:
+                        try:
+                            doctor = Doctor.objects.get(email=user.email)
+
+                            data = {
+                                'Results': "Success request",
+                                'pk': user.pk,
+                                'name': doctor.name,
+                                'typeOfAccount': 'Doctor'
+                            }
+                        except:
+                            data = {'Results': "False"}
             else:
                 data = {'Results': "False"}
         else:
