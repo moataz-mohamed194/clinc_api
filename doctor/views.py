@@ -93,8 +93,7 @@ class GetFeesOfDay(generics.ListAPIView):
     serializer_class = FeesSerializers
 
     def get_queryset(self):
-        print(self.request.data)
-        data_query = Fees.objects.filter(time=self.request.data['date']).all()
+        data_query = Fees.objects.filter(time=self.kwargs['date']).all()
         return data_query
 
 
@@ -102,7 +101,7 @@ class GetFeesOfMonth(generics.ListAPIView):
     serializer_class = FeesSerializers
 
     def get_queryset(self):
-        date_object = datetime.datetime.strptime(self.request.data['date'], '%Y-%m-%d').date()
+        date_object = datetime.datetime.strptime(self.kwargs['date'], '%Y-%m-%d').date()
         month = date_object.month
         year = date_object.year
         start_month = datetime.date(year, month, 1)
