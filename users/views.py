@@ -56,7 +56,7 @@ class GetAllRequestedAddedByUser(generics.ListAPIView):
     serializer_class = RowSerializers
 
     def get_queryset(self):
-        return Row.objects.filter(added_by=self.request.data['pk']).all()
+        return Row.objects.filter(added_by=self.kwargs['pk']).all()
 
 
 class Login(generics.CreateAPIView):
