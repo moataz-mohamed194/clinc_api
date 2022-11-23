@@ -110,7 +110,7 @@ class GetFeesOfMonth(generics.ListAPIView):
         return data_query
 
 
-class AddNurse(generics.CreateAPIView):
+class AddNurse(generics.ListCreateAPIView):
     serializer_class = NurseSerializers
 
     def post(self, request, *args, **kwargs):
@@ -149,6 +149,15 @@ class AddNurse(generics.CreateAPIView):
                 'Results': f"{e}"
             }
         return JsonResponse(data)
+
+    def get_queryset(self):
+        try:
+            return Nurse.objects.all()
+        except Exception as e:
+            data = {
+                'Results': f"{e}"
+            }
+            return JsonResponse(data)
 
 
 class AddReportForSick(generics.UpdateAPIView):
