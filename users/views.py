@@ -20,13 +20,14 @@ class AddAccount(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         data_sign = self.request.data
+
         try:
-            if User.objects.get(email=data_sign['email']).exists():
+            if User.objects.filter(email=data_sign['email']).exists():
                 data = {
                     'Results': "email is used"
                 }
                 return JsonResponse(data)
-            elif User.objects.get(username=data_sign['userName']).exists():
+            if User.objects.filter(username=data_sign['userName']).exists():
                 data = {
                     'Results': "user name is used"
                 }
@@ -45,9 +46,9 @@ class AddAccount(generics.CreateAPIView):
                 data = {
                     'Results': "Success request"
                 }
-        except:
+        except Exception as e:
             data = {
-                'Results': f"Check your data"
+                'Results': f"{e}"
             }
         return JsonResponse(data)
 

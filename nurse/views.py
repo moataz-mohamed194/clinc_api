@@ -30,7 +30,6 @@ class AddVisitor(generics.ListCreateAPIView):
     def get_queryset(self):
         date = datetime.date.today()
         data_query = Visitor.objects.filter(time=date).all()
-        print('159263')
         return data_query
 
     def post(self, request, *args, **kwargs):
