@@ -53,6 +53,36 @@ class AddAccount(generics.CreateAPIView):
         return JsonResponse(data)
 
 
+class UpdateAccount(generics.ListCreateAPIView):
+    serializer_class = UserSerializers
+
+    def post(self, request, *args, **kwargs):
+        data_sign = self.request.data
+
+        try:
+            main_user_data = MainUser.objects.get(id=self.kwargs['pk'])
+            main_user_email = main_user_data.email
+            user_data = User.objects.get(email=main_user_email)
+            if data_sign['userName']:
+                main_user_data.username = data_sign['userName']
+                user_data.username = data_sign['userName']
+                main_user_data.save()
+                user_data.save()
+            if data_sign['email']:
+                main_user_data.email = data_sign['email']
+                user_data.email = data_sign['email']
+                main_user_data.save()
+                user_data.save()
+            data = {
+                'Results': "Success request"
+            }
+        except Exception as e:
+            data = {
+                'Results': f"{e}"
+            }
+        return JsonResponse(data)
+
+
 class GetAllRequestedAddedByUser(generics.ListAPIView):
     serializer_class = RowSerializers
 
