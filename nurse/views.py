@@ -29,7 +29,7 @@ class AddVisitor(generics.ListCreateAPIView):
 
     def get_queryset(self):
         date = datetime.date.today()
-        data_query = Visitor.objects.filter(time=date).all()
+        data_query = Visitor.objects.filter(time=date, soft_delete=False).all()
         return data_query
 
     def post(self, request, *args, **kwargs):
@@ -92,5 +92,41 @@ class AddBooking(generics.ListCreateAPIView):
 
     def get_queryset(self):
         date = datetime.date.today()
-        data_query = Row.objects.filter(time=date)
+        data_query = Row.objects.filter(time=date, soft_delete=False)
         return data_query
+
+
+class EnteredSick (generics.UpdateAPIView):
+    def patch(self, request, *args, **kwargs):
+        try:
+
+            sick = Row.objects.get(id=self.kwargs['pk'])
+            sick.soft_delete = True
+            sick.save()
+            data = {
+                'Results': "Success request"
+            }
+        except Exception as e:
+
+            data = {
+                'Results': f"{e}"
+            }
+        return JsonResponse(data)
+
+
+class EnteredVisited(generics.UpdateAPIView):
+    def patch(self, request, *args, **kwargs):
+        try:
+
+            sick = Visitor.objects.get(id=self.kwargs['pk'])
+            sick.soft_delete = True
+            sick.save()
+            data = {
+                'Results': "Success request"
+            }
+        except Exception as e:
+
+            data = {
+                'Results': f"{e}"
+            }
+        return JsonResponse(data)

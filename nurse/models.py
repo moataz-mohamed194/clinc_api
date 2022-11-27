@@ -39,6 +39,7 @@ class Visitor (models.Model):
     )
     time = models.DateField('date of visit', default=datetime.date.today)
     approved = models.BooleanField('approved by doctor', default=False)
+    soft_delete = models.BooleanField('entered', default=False)
     objects = models.Manager()
 
     def __str__(self):
@@ -56,6 +57,7 @@ class Row(models.Model):
     doctor_report = models.TextField('doctor report', blank=True, null=True)
     approved = models.BooleanField('approved by nurse', default=False)
     time = models.DateField('date of Statement', default=datetime.date.today)
+    soft_delete = models.BooleanField('entered', default=False)
     type_of_statement = models.CharField(
             max_length=1,
             choices=TYPE_OF_SICK,
