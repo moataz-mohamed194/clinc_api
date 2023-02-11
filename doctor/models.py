@@ -18,6 +18,8 @@ class Clinic(models.Model):
     from_time = models.TimeField('when open')
     to_time = models.TimeField('when close')
     time_of_vacation = models.TextField('time of vacation')
+    latitude = models.TextField('latitude')
+    longitude = models.TextField('longitude')
     objects = models.Manager()
 
     def __str__(self):
