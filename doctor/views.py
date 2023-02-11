@@ -187,6 +187,8 @@ class EditDataClinic(generics.UpdateAPIView):
             update_data.from_time = data_clean['from_time']
             update_data.to_time = data_clean['to_time']
             update_data.time_of_vacation = data_clean['time_of_vacation']
+            update_data.latitude = data_clean['latitude']
+            update_data.longitude = data_clean['longitude']
             update_data.save()
             data = {
                 'Results': "Success request"
@@ -240,7 +242,9 @@ class ModelOfClinic(generics.ListCreateAPIView):
                 note=data_clean['note'],
                 from_time=data_clean['from_time'],
                 to_time=data_clean['to_time'],
-                time_of_vacation=data_clean['time_of_vacation']
+                time_of_vacation=data_clean['time_of_vacation'],
+                longitude=data_clean['longitude'],
+                latitude=data_clean['latitude']
             )
             new_data.save()
             data = {
