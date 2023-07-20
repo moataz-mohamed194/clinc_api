@@ -5,6 +5,7 @@ class User(models.Model):
     username = models.CharField('user name', max_length=400, unique=True)
     email = models.EmailField('email', unique=True)
     password = models.CharField('password', max_length=400)
+    token = models.TextField('token', default='')
     objects = models.Manager()
 
     class Meta:

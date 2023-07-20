@@ -36,6 +36,7 @@ class Doctor (models.Model):
     email = models.EmailField('doctor email', unique=True)
     password = models.CharField('doctor password', max_length=400)
     description = models.TextField('doctor description')
+    token = models.TextField('token', default='')
     pic = models.FileField(
         upload_to=update_pic_filename,
         blank=True, null=True, verbose_name='صورة'

@@ -17,6 +17,7 @@ class Nurse (models.Model):
     email = models.EmailField('nurse email', unique=True)
     password = models.CharField('nurse password', max_length=400)
     description = models.TextField('description about nurse')
+    token = models.TextField('token', default='')
     objects = models.Manager()
 
     def __str__(self):

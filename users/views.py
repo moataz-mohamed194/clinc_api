@@ -41,6 +41,7 @@ class AddAccount(generics.CreateAPIView):
                 main_user = MainUser.objects.create_user(
                     username=data_sign['userName'],
                     email=data_sign['email'],
+                    token=data_sign['token'],
                     password=data_sign['password'])
                 main_user.save()
                 data = {

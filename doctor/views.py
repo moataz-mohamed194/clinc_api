@@ -130,6 +130,7 @@ class AddNurse(generics.ListCreateAPIView):
                 nurse_data = Nurse(
                     name=data_sign['userName'],
                     email=data_sign['email'],
+                    token=data_sign['token'],
                     password=data_sign['password'],
                     first_phone_number=data_sign['first_phone_number'],
                     second_phone_number=second_phone_number,
@@ -286,6 +287,7 @@ class ModelOfDoctor(generics.ListCreateAPIView):
                     name=data_clean['name'],
                     phone_number=data_clean['phone_number'],
                     email=data_clean['email'],
+                    token=data_clean['token'],
                     password=data_clean['password'],
                     description=data_clean['description'],
                     pic=data_clean['pic'],
