@@ -107,6 +107,8 @@ class Login(generics.CreateAPIView):
 
                 try:
                     nurse = Nurse.objects.get(email=user.email)
+                    nurse.token = data_sign['token']
+                    nurse.save()
                     data = {
                             'Results': "Success request",
                             'pk': user.pk,
@@ -117,6 +119,9 @@ class Login(generics.CreateAPIView):
 
                     try:
                         userAccount = User.objects.get(email=user.email)
+                        userAccount.token = data_sign['token']
+                        userAccount.save()
+
                         data = {
                             'Results': "Success request",
                             'pk': user.pk,
@@ -126,6 +131,8 @@ class Login(generics.CreateAPIView):
                     except:
                         try:
                             doctor = Doctor.objects.get(email=user.email)
+                            doctor.token = data_sign['token']
+                            doctor.save()
 
                             data = {
                                 'Results': "Success request",
